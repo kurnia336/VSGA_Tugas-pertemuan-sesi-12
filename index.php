@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
     <script src="https://kit.fontawesome.com/ee5054d3af.js" crossorigin="anonymous"></script>
-    <title>Sesi 12</title>
+    <title>Sesi 12 dan 13</title>
 </head>
 
 <body>
@@ -44,12 +44,21 @@
                           <span aria-hidden="true">&times;</span>
                         </button>
                       </div>';
+                    } else if ($pesan == "update") {
+                        echo '<div class="alert alert-warning alert-dismissible fade show" role="alert">
+                        Data siswa berhasil diubah!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>';
+                    } else if ($pesan == "hapus") {
+                        echo '<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        Data siswa berhasil dihapus!
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>';
                     }
-                    // else if($pesan == "update"){
-                    //     echo "Data berhasil di update.";
-                    // }else if($pesan == "hapus"){
-                    //     echo "Data berhasil di hapus.";
-                    // }
                 }
 
                 if (isset($_GET['page'])) {
@@ -64,6 +73,15 @@
                             break;
                         case 'daftar_baru_proses':
                             include "daftar_baru_proses.php";
+                            break;
+                        case 'edit_siswa':
+                            include "edit_siswa.php";
+                            break;
+                        case 'edit_siswa_proses':
+                            include "edit_siswa_proses.php";
+                            break;
+                        case 'hapus_siswa_proses':
+                            include "hapus_siswa_proses.php";
                             break;
                         case 'pendaftar':
                             include "pendaftar.php";

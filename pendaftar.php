@@ -1,19 +1,21 @@
 <div class="card">
     <div class="card-header">
-    <i class="fa-solid fa-users"></i> <b>DATA SISWA YANG SUDAH MENDAFTAR</b>
+        <i class="fa-solid fa-users"></i> <b>DATA SISWA YANG SUDAH MENDAFTAR</b>
     </div>
     <div class="card-body">
-        <a href="index.php?page=daftar_baru" class="btn btn-md btn-info" style="margin-bottom: 10px"><i class="fa-solid fa-user-plus"></i> TAMBAH
+        <a href="index.php?page=daftar_baru" class="btn btn-md btn-info" style="margin-bottom: 10px"><i
+                class="fa-solid fa-user-plus"></i> TAMBAH
             SISWA BARU</a>
-        <table class="table table-bordered" id="myTable">
+        <table class="table table-bordered table-responsive" id="myTable">
             <thead>
                 <tr>
-                    <th scope="col">NO.</th>
-                    <th scope="col">NAMA</th>
-                    <th scope="col">ALAMAT</th>
-                    <th scope="col">JENIS KELAMIN</th>
-                    <th scope="col">AGAMA</th>
-                    <th scope="col">SEKOLAH ASAL</th>
+                    <th scope="col" class="text-center">NO.</th>
+                    <th scope="col" class="text-center">NAMA</th>
+                    <th scope="col" class="text-center" style="width:18%">ALAMAT</th>
+                    <th scope="col" class="text-center">JENIS KELAMIN</th>
+                    <th scope="col" class="text-center">AGAMA</th>
+                    <th scope="col" class="text-center">SEKOLAH ASAL</th>
+                    <th scope="col" class="text-center" style="width:16%">TINDAKAN</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,6 +45,12 @@
                         </td>
                         <td>
                             <?php echo $row['sekolah_asal'] ?>
+                        </td>
+                        <td class="text-center">
+                            <a href="index.php?page=edit_siswa&id_siswa=<?php echo $row['id_siswa'] ?>"
+                                class="btn btn-sm btn-primary">EDIT</a> |
+                            <a href="hapus_siswa_proses.php?id_siswa=<?php echo $row['id_siswa'] ?>"
+                                class="btn btn-sm btn-danger">HAPUS</a>
                         </td>
                     </tr>
 
